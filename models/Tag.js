@@ -7,6 +7,10 @@ class Tag extends Model {}
 Tag.init(
   {
     // define columns
+    tag_name: {
+      type: DataTypes.STRING(50),
+      allowNull: false
+    }
   },
   {
     sequelize,

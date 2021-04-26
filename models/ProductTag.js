@@ -10,7 +10,11 @@ ProductTag.init(
     product_id:{
       type: DataTypes.STRING(50),
       allowNull: false
-    }
+    },
+    tag_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
   },
   {
     sequelize,

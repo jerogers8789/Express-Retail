@@ -23,7 +23,7 @@ router.get('/:id', async (req, res) => {
   // be sure to include its associated Products
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   // create a new category
   try { const categoryData = await Category.create(req.body);
   res.json(categoryData);
@@ -33,7 +33,7 @@ router.post('/', (req, res) => {
   
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
   // update a category by its `id` value
   const id = req.params.id;
   try { const categoryData = await Category.update(req.body, {
@@ -48,7 +48,7 @@ res.json(categoryData)
 }
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
 
   const categoryData = await Category.destroy({

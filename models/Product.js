@@ -13,7 +13,20 @@ Product.init(
     product_name: {
       type: DataTypes.STRING(50),
       allowNull: false
-    }
+    },
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    category_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'category',
+        key: 'id',
+      },
+    },
   },
   {
     sequelize,

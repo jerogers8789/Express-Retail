@@ -23,6 +23,7 @@ router.get('/:id', async (req, res) => {
   } 
   return res.json(categoryData)
   // be sure to include its associated Products
+});
 
 router.post('/', async (req, res) => {
   // create a new category
@@ -31,7 +32,6 @@ router.post('/', async (req, res) => {
 } catch (err)  {
  console.log(err);
 }
-  
 });
 
 router.put('/:id', async (req, res) => {

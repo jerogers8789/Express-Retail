@@ -27,6 +27,13 @@ Product.init(
         key: 'id',
       },
     },
+    stock: {
+      type: DataTypes.INTEGER,
+    },
+    price: {
+      type: DataTypes.DECIMAL,
+      allowNull: false
+    }
   },
   {
     sequelize,

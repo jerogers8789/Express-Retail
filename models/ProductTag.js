@@ -8,7 +8,7 @@ ProductTag.init(
   {
     // define columns
     product_id:{
-      type: DataTypes.STRING(50),
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     tag_id: {

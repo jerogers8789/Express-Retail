@@ -5,8 +5,10 @@ const { Category, Product } = require('../../models');
 
 router.get('/', async (req, res) => {
   // find all categories
-const categoryData = await Category.findAll({include: ['Product']}).catch(err) 
-  console.log(err);
+try {const categoryData = await Category.findAll({include: ['Product']})}
+catch(err) {
+  console.log(err)
+}
   return res.json(categoryData)
 });
 
@@ -15,20 +17,19 @@ const categoryData = await Category.findAll({include: ['Product']}).catch(err)
 
 router.get('/:id', async (req, res) => {
   // find one category by its `id` value
-  try {const categoryData = await Category.findByPk(req.params.id, {include: ['Product']})} 
+  try {const categoryData = await Category.findByPk(req.params.id, {include: ['Product']})}
   catch (err) {
     console.log(err)
-  }
+  } 
   return res.json(categoryData)
   // be sure to include its associated Products
-});
 
 router.post('/', async (req, res) => {
   // create a new category
   try { const categoryData = await Category.create(req.body);
   res.json(categoryData);
 } catch (err)  {
-  res.json(err);
+ console.log(err);
 }
   
 });
@@ -44,7 +45,7 @@ return;
 }
 res.json(categoryData)
 } catch (err) {
-  res.json(err);
+ console.log(err);
 }
 });
 

@@ -13,8 +13,18 @@ ProductTag.init(
     },
     tag_id: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      references: {
+        model: 'product',
+        key: 'id',
+      }
     },
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
+    }
   },
   {
     sequelize,

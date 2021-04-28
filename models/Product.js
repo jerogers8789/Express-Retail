@@ -33,7 +33,7 @@ Product.init(
       defaultValue: 5,
     },
     price: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.DECIMAL(10, 2),
       allowNull: false
     }
   },
